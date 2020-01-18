@@ -91,10 +91,10 @@
   "\\clip":
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/clip"
     description: '''
-      Crop image to width x height, starting at hoffset x voffset
-      OR use piece at position (x, y) if number of pieces is
-      specified by \\setupclipping.
-    '''
+                   Crop image to width x height, starting at hoffset x voffset
+                   OR use piece at position (x, y) if number of pieces is
+                   specified by \\setupclipping.
+                 '''
     prefix: "clip"
     body: "\\clip" +
       "[x=${1:number}, y=${2:number}, hoffset=${3:dim}, voffset=${4:dim}, width=${5:dim}, height=${6:dim}]" +
@@ -3021,3 +3021,18 @@
       "\t$0\n" +
       "\\\\stopformula\n" +
       "$1"
+  '\\definepagecolumns':
+    description: 'Define a page columns setup.\ncategory: structure layout; level: style; defined in: page-pcl.mkiv; interface: i-pagecolumns.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/definepagecolumns'
+    prefix: 'definepagecolumns'
+    body: '\\definepagecolumns[${1:name}][${2:inherits from}][${3:options}]\n$4'
+  '\\setuppagecolumns':
+    description: 'Configure a set of page columns\ncategory: structure layout; level: style; defined in: page-pcl.mkiv; interface: i-pagecolumns.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/setuppagecolumns'
+    prefix: 'setuppagecolumns'
+    body: '\\setuppagecolumns[${1:name}][${2:options}]\n$3'
+  '\\startpagecolumns':
+    description: 'Start a page column layout\ncategory: structure layout; level: document; defined in: page-pcl.mkiv; interface: i-pagecolumns.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/startpagecolumns'
+    prefix: 'startpagecolumns'
+    body: '\\startpagecolumns[${1:options}]\n$2\n\\\\stoppagecolumns\n'
