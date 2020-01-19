@@ -108,12 +108,6 @@
       "[${1:color}]" +
       "{${2:text to colorize}}" +
       "$3"
-  "\\column":
-    descriptionMoreURL: "https://wiki.contextgarden.net/Command/column"
-    description: "Insert column break"
-    prefix: "column"
-    body: "\\column\n" +
-      "$0"
   "\\convertnumber":
     description: "Convert a number into a different form, e.g. to Roman numerals, bullets, etc."
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/convertnumber"
@@ -2567,7 +2561,7 @@
       "\t$1\n" +
       "\\\\stoppositioning"
   "\\startpostponing":
-    description: "Environment to place e.g. images on defined pages; use with makeups"
+    description: "Environment to place e.g. images on defined pages; use with makeups\ndefined in: page-pst.mkiv; interface: i-postponing.xml"
     descriptionMoreURL: "https://wiki.contextgarden.net/Command/startpostponing"
     prefix: "startpostponing"
     body: "\\startpostponing[${1:page number or increment}]\n" +
@@ -3021,6 +3015,81 @@
       "\t$0\n" +
       "\\\\stopformula\n" +
       "$1"
+  '\\definecolumnbreak':
+    description: 'Define a named method of colun breaking\nlevel: style; defined in: page-brk.mkiv; interface: i-pagebreak.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/definecolumnbreak'
+    prefix: 'definecolumnbreak'
+    body: '\\definecolumnbreak[${1:name}]\n$2'
+  '\\columnbreak':
+    description: 'Synonym of \\column; insert column break\nlevel: document; defined in: page-brk.mkiv; interface: i-pagebreak.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/columnbreak'
+    prefix: 'columnbreak'
+    body: '\\columnbreak\n$0'
+  '\\column':
+    description: 'Insert column break\nlevel: document; defined in: page-brk.mkiv; interface: i-pagebreak.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/column'
+    prefix: 'column'
+    body: '\\column\n$0'
+  '\\definecolumnset':
+    description: 'Define a column set\nmanual: columnsets.pdf; category: layout; level: style; defined in: page-cst.mkiv; interface: i-pagegrid.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/definecolumnset'
+    prefix: 'definecolumnset'
+    body: '\\definecolumnset[${1:name}][${2:inherits from}][${3:options}]\n$4'
+  '\\setupcolumnset':
+    description: 'Setup a column set\nmanual: columnsets.pdf; category: layout; level: style; defined in: page-cst.mkiv; interface: i-pagegrid.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/setupcolumnset'
+    prefix: 'setupcolumnset'
+    body: '\\setupcolumnset[${1:name}][${2:options}]\n$3'
+  '\\startcolumnset':
+    description: 'Start a column set\nmanual: columnsets.pdf; category: layout; level: document; defined in: page-cst.mkiv; interface: i-pagegrid.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/startcolumnset'
+    prefix: 'startcolumnset'
+    body: '\\startcolumnset[${1:name}][${2:options}]\n$3\n\\\\stopcolumnset\n'
+  '\\definecolumnsetspan':
+    description: 'Define a column set span\nmanual: columnsets.pdf; category: layout; level: style; defined in: page-cst.mkiv; interface: i-pagegrid.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/definecolumnsetspan'
+    prefix: 'definecolumnsetspan'
+    body: '\\definecolumnsetspan[${1:name}][${2:name}][${3:options}]\n$4'
+  '\\setupcolumnsetspan':
+    description: 'Setup a column set span\nmanual: columnsets.pdf; category: layout; level: style; defined in: page-cst.mkiv; interface: i-pagegrid.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/setupcolumnsetspan'
+    prefix: 'setupcolumnsetspan'
+    body: '\\setupcolumnsetspan[${1:name}][${2:options}]\n$3'
+  '\\startcolumnsetspan':
+    description: 'Start a column set span\nmanual: columnsets.pdf; category: layout; level: document; defined in: page-cst.mkiv; interface: i-pagegrid.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/startcolumnsetspan'
+    prefix: 'startcolumnsetspan'
+    body: '\\startcolumnsetspan[${1:name}][${2:options}]\n$3\n\\\\stopcolumnsetspan\n'
+  '\\columnsetspanwidth':
+    description: 'Width of a number of columns\nmanual: columnsets.pdf; category: layout; level: style; defined in: page-cst.mkiv; interface: i-pagegrid.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/columnsetspanwidth'
+    prefix: 'columnsetspanwidth'
+    body: '\\columnsetspanwidth{${1:number}}\n$2'
+  '\\definecolumnsetarea':
+    description: 'Define a column set area\nmanual: columnsets.pdf; category: layout; level: style; defined in: page-cst.mkiv; interface: i-pagegrid.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/definecolumnsetarea'
+    prefix: 'definecolumnsetarea'
+    body: '\\definecolumnsetarea[${1:name}][${2:name}][${3:options}]\n$4'
+  '\\setupcolumnsetarea':
+    description: 'Setup a column set area\nmanual: columnsets.pdf; category: layout; level: style; defined in: page-cst.mkiv; interface: i-pagegrid.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/setupcolumnsetarea'
+    prefix: 'setupcolumnsetarea'
+    body: '\\setupcolumnsetarea[${1:name}][${2:options}]\n$3'
+  '\\setupcolumnsetareatext':
+    description: 'Setup a column set area text\nmanual: columnsets.pdf; category: layout; level: style; defined in: page-cst.mkiv; interface: i-pagegrid.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/setupcolumnsetareatext'
+    prefix: 'setupcolumnsetareatext'
+    body: '\\setupcolumnsetareatext[${1:name}]{${2:text}}\n$3'
+  '\\setupcolumnsetlines':
+    description: 'category: layout; level: style; defined in: page-cst.mkiv; interface: i-pagegrid.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/setupcolumnsetlines'
+    prefix: 'setupcolumnsetlines'
+    body: '\\setupcolumnsetlines[${1:name}]{${2:number}}{${3:number}} {${4:number}}\n$5'
+  '\\setupcolumnsetstart':
+    description: 'category: layout; level: style; defined in: page-cst.mkiv; interface: i-pagegrid.xml'
+    descriptionMoreURL: 'https://wiki.contextgarden.net/Command/setupcolumnsetstart'
+    prefix: 'setupcolumnsetstart'
+    body: '\\setupcolumnsetstart[${1:name}]{${2:number}}{${3:number}} {${4:number}}\n$5'
   '\\definepagecolumns':
     description: 'Define a page columns setup.\ncategory: structure layout; level: style; defined in: page-pcl.mkiv; interface: i-pagecolumns.xml'
     descriptionMoreURL: 'https://wiki.contextgarden.net/Command/definepagecolumns'
